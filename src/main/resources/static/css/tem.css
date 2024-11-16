@@ -1,0 +1,424 @@
+@charset "utf-8";
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: '思源黑体 Normal';
+}
+
+/* 打印声明 */
+@media print {
+	@page {
+		size: A4 portrait;
+	}
+}
+.flexCenter {
+	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	align-items: center;
+	-webkit-align-items: center;
+	box-align: center;
+	-moz-box-align: center;
+	-webkit-box-align: center;
+}
+
+.flexWrap {
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.flexBetween {
+	-webkit-box-pack: justify;
+	-moz-justify-content: space-between;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.flexAround {
+	-moz-justify-content: space-around;
+	-webkit-justify-content: space-around;
+	justify-content: space-around;
+}
+.flexMiddle {
+	-webkit-box-pack: center;
+	-moz-justify-content: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+
+.flexColumn {
+	-webkit-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+}
+.font-bold {
+	font-family: "思源黑体 Bold";
+}
+.mt30 {
+	margin-top: 30px;
+}
+.mt20 {
+	margin-top: 15px;
+}
+.mt40 {
+	margin-top: 40px;
+}
+.mt50{
+	margin-top: 50px;
+}
+.mt70{
+	margin-top: 70px;
+}
+.pt20{
+	padding-top: 20px;
+}
+.pageBefore {
+	page-break-before: always;
+}
+
+
+/* 之后分页 */
+.pageAfter {
+	page-break-after: always;
+}
+
+/* 避免分页 */
+.pageTogether {
+	page-break-inside: avoid;
+}
+
+.content {
+	min-height: 1009px;
+	margin: 0 auto;
+}
+.lastPage{
+	height: 1009px;
+}
+.lastPageTop{
+	padding: 0 30px;
+}
+.contentItem{
+	width: 27.82em;
+	height: auto;
+	overflow: hidden;
+}
+.pageCon{
+	width: 27.82em;
+	height: 35.35em;
+	padding: 0.84em 1.09em 0;
+
+}
+.pageTitle{
+	width: auto;
+}
+.footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+#tcmConstitutionVo,#expectant,#expectantPerformances,#faith,#faithPerformance,#patientSatisfaction,#opScheduledVos,#ohdScheduledVos,#ohdFollowUpFulfillmentVos,#opFollowVos,#ohdFollowVos,
+#opFollowUpFulfillmentVos,#ohdAppointmentFollowVos,#opAppointmentFollowVos,#ohdManagerNcdNormVos,#opManagerNcdNormVos,#ohdFARVNcdNormVos,
+#opFARVNcdNormVos,#ncdInpatientDaysVos,#dashboardMainCDSDepAgainVos,#ohdMultipleFollowUps,#opMultipleFollowUps,
+#multipleFollowUpsYearVos,#medicineNcdNormVos,#diseaseAwarenessByScore,#serviceSatisfactions,#inManagerAssess,#diseaseAwarenessAnalysis,
+#prescriptionAdherenceReport{
+	display: none;
+	/*white-space: nowrap;*/
+	/*font-size: 12px;*/
+	/*color: red;*/
+	/*margin-bottom: 6px;*/
+}
+
+/* 表格样式 */
+.tableBox {
+	width: 100%;
+	table-layout: auto;
+	border-collapse: collapse;
+	font-size: 14px;
+}
+
+.tbgColor {
+	background-color: #DEEBF7;
+}
+
+th,
+td {
+	min-width: 2.45em;
+	border: 0.04em solid #636363;
+	padding: 0.3em 0.18em;
+	font-weight: 400;
+	font-size: 12px;
+	color: #000;
+	line-height: 1.6;
+	text-align: center;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+tbody {
+	table-layout: fixed;
+}
+
+thead {
+	background-color: #DDF3E4;
+}
+td input{
+	width: 4em;
+	height: 100%;
+	text-align: center;
+	border: none;
+	font-size: 1em;
+	margin: -4em;
+	box-sizing: border-box;
+	padding: 0;
+
+}
+td input::placeholder{
+	color: #CECECE;
+}
+td input:focus-visible{
+	outline: none;
+}
+
+/* 内容左右边距 */
+.boxCenter {
+	padding:0 1.01em 3em;
+	margin: 0 auto;
+}
+/* 章节内容 */
+.sectionTitle {
+	padding-bottom: 0.35em;
+	font-size: 18px;
+	color: #107FC4;
+	font-weight: bold;
+}
+.sectionTitle:before {
+	display: inline-block;
+	content: '';
+	width: 0.21em;
+	height: 0.84em;
+	background-color: #107FC4;
+	margin-right: 0.35em;
+	margin-bottom: 0.2em;
+	border-radius: 1.75em;
+	vertical-align: bottom;
+}
+.subContent{
+	font-size: 0.42em;
+	margin: 1em 0;
+	line-height: 2em;
+	text-indent: 2em;
+}
+.div-title{
+	font-size: 0.5em;
+	text-align: center;
+	font-weight: 550;
+	margin-bottom: 1.5em;
+	color: #000;
+}
+.evals-finished-error-person .bar{
+	height: 12em;
+}
+.tcm-eval-result .bar{
+	height:13em;
+}
+.bar,.line{
+	width: 22.99em;
+	min-height: 12em;
+}
+.disease-hospital-total .bar{
+	min-height: 9em;
+}
+.disease-department-average-total .line{
+	min-height: 9em;
+}
+.year-visits .line{
+	min-height: 9em;
+}
+.pie{
+	width: 22.99em;
+
+	min-height: 9em;
+}
+.leftpie .pie,.rigpie .pie{
+	width: 11.49em;
+	min-height: 11em;
+}
+.test-pie .pie{
+	width: 11.49em;
+	min-height: 10em;
+}
+.expected-statistics,.confidence-statistics{
+	position: relative;
+}
+.total-legend{
+	position: absolute;
+	right:8.8%;
+	top:0;
+}
+.total-legend p{
+	font-size: 0.42em;
+	color: #000;
+	margin: 0.3em 0;
+}
+.circleBar{
+	position: relative;
+	width: 9em;
+	height: 10em;
+	margin: 3em auto;
+}
+.circleCenter{
+	width: 9em;
+	height: 10em;
+	border-radius: 50%;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	/* left: 38%;
+    top: 0; */
+}
+.circleCenter img{
+	width: 9em;
+	height: 10em;
+}
+
+.circle{
+	position: absolute;
+}
+.circle:nth-child(2) {
+	top: -18%;
+	left: 37%;
+}
+
+.circle:nth-child(3) {
+	top: 14%;
+	right: -7%;
+}
+
+.circle:nth-child(4) {
+	top: 70%;
+	right: -11%;
+}
+
+.circle:nth-child(5) {
+	top: 106%;
+	left: 37%;
+}
+
+.circle:nth-child(6) {
+	top: 70%;
+	left: -37%;
+}
+.circle:nth-child(7) {
+	top: 14%;
+	left: -34%
+}
+
+.circle .texts{
+	font-size: 0.56em;
+	color: #107FC4;
+	font-weight: bold;
+	position: absolute;
+	white-space: nowrap;
+	text-align: center;
+}
+.circle .texts span{
+	font-size:1em;
+	color: #107FC4;
+	font-weight: normal;
+	display: block;
+}
+.texts{
+	left: -12%;
+	top: -72%;
+}
+
+.leftpie,.rigpie{
+	/* flex: 1;
+	-ms-flex: 1;
+	-webkit-flex: 1; */
+}
+.blodSubtit{
+	font-size: 0.56em;
+	font-weight: 500;
+	color: #000000;
+	margin: 1.5em 0 1em;
+}
+.conten-tips{
+	color: #3D3D3D;
+	font-size: 0.42em;
+	line-height: 2em;
+}
+.conten-tips span{
+	display: inline-block;
+	width: 0.3em;
+	height: 0.3em;
+	background: #107FC4;
+	border-radius: 50%;
+	margin-bottom: 0.16em;
+	margin-right: 0.3em;
+}
+.lastPage{
+	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+}
+.close-remark{
+	color: #107FC4;
+	font-weight: 700;
+	font-size: 50px;
+	/* margin: auto 0; */
+	text-align: center;
+	vertical-align: middle;
+	flex: 1;
+	flex: 1;
+	-webkit-box-flex: 1;
+	-moz-box-flex: 1;
+	-ms-flex: 1;
+	-webkit-flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.end-footer{
+	margin-top: 2em;
+	padding: 0 1em
+}
+.leftimg{
+	text-align: center;
+	margin-left: 1em;
+}
+.leftimg img{
+	width:4em;
+	height: 4em;
+}
+.leftimg p{
+	font-size: 0.56em;
+	color: #107FC4;
+	font-weight: bold;
+}
+.riginfo{
+	margin-right: 1em;
+}
+.riginfo div{
+	font-size: 0.8em;
+	color: #107FC4;
+	font-weight: bold;
+	margin-bottom: 2em;
+}
+.riginfo p{
+	font-size: 0.56em;
+	color: #107FC4;
+	margin-top: 1em;
+}

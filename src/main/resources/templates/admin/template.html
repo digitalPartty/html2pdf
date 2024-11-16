@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Java 工程师个人简介</title>
+  <script th:src="@{/js/jquery.min.3.6.1.js}"></script>
+  <script th:src="@{/js/echarts.min.5.4.0.js}"></script>
+  <link rel="stylesheet" th:href="@{/css/public.css}">
+  <link rel="stylesheet" th:href="@{/css/tem.css}">
+  <style>    body {
+    background-color: #f8f9fa;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .chart-container {
+    width: 400px;
+    height: 400px;
+  }
+  .table thead th {
+    background-color: #007bff;
+    color: #fff;
+  }
+  .table tbody td {
+    vertical-align: middle;
+  }
+  h1, h2 {
+    color: #333;
+  }
+  </style>
+</head>
+
+<body>
+<header class="container mt-5">
+  <h1 class="text-center">Java 工程师个人简介</h1>
+</header>
+
+<main class="container mt-5">
+  <section class="row mt-4">
+    <div class="col-md-6">
+      <h2>基本信息</h2>
+      <table class="table table-striped">
+        <tr>
+          <td>姓名</td>
+          <td th:text="${user.name}"></td>
+        </tr>
+        <tr>
+          <td>年龄</td>
+          <td th:text="${user.age}"></td>
+        </tr>
+        <tr>
+          <td>邮箱</td>
+          <td th:text="${user.email}"></td>
+        </tr>
+        <tr>
+          <td>地址</td>
+          <td th:text="${user.address}"></td>
+        </tr>
+        <tr>
+          <td>工作经验</td>
+          <td th:text="${user.experience} + '年'"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-6">
+      <h2>技能</h2>
+      <div id="skillsChart" class="chart-container"></div>
+    </div>
+  </section>
+
+  <section class="row mt-4">
+    <div class="col-md-12">
+      <h2>项目经验</h2>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>项目名称</th>
+          <th>时间</th>
+          <th>角色</th>
+          <th>描述</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="project : ${user.projects}">
+          <td th:text="${project.name}"></td>
+          <td th:text="${project.time}"></td>
+          <td th:text="${project.role}"></td>
+          <td th:text="${project.description}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<script>  document.addEventListener('DOMContentLoaded', function() {
+  // 确保 ECharts 容器存在
+  var chartContainer = document.getElementById('skillsChart');
+  if (chartContainer) {
+    // 基于准备好的 DOM，初始化 echarts 实例
+    var myChart = echarts.init(chartContainer);
+
+    // 指定图表的配置项和数据
+    var option = {
+      title: {
+        text: '技能图表'
+      },
+      tooltip: {},
+      legend: {
+        data: ['熟练度']
+      },
+      radar: {
+        // 雷达图的指示器，用于定义雷达图的最大值和名称
+        indicator: [
+          { name: 'Java', max: 100 },
+          { name: 'Spring Boot', max: 100 },
+          { name: 'Thymeleaf', max: 100 },
+          { name: 'MySQL', max: 100 },
+          { name: 'Docker', max: 100 }
+        ]
+      },
+      series: [{
+        name: '技能',
+        type: 'radar',
+        // 填充区域的颜色
+        areaStyle: { normal: {} },
+        data: [
+          {
+            value: [90, 85, 75, 80, 70],
+            name: '熟练度'
+          }
+        ]
+      }]
+    };
+
+    // 使用刚指定的配置项和数据显示图表
+    myChart.setOption(option);
+  } else {
+    console.error('ECharts 容器未找到');
+  }
+});
+</script>
+</body>
+</html>

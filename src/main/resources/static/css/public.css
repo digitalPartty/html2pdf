@@ -1,0 +1,92 @@
+@charset "utf-8";
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "思源黑体 Normal";
+    box-sizing: border-box;
+}
+html {
+    font-size: 28.54px;
+}
+h1, h2, h3, h4, h5, h6 {
+    /* font-size: 12px; */
+    font-weight: normal;
+    border:0; margin:0; padding:0
+}
+.flexCenter {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    box-align: center;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+}
+.flexBetween {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    box-align: center;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    box-pack: justify;
+    -moz-box-pack: justify;
+    -webkit-box-pack: justify;
+}
+
+.topTime{
+    text-align: right;
+    font-size: 0.42em;
+    margin-bottom: 0.88em;
+}
+
+.pageTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 12.8em;
+    height: 48.6px;
+    margin: 0 auto;
+}
+.pageTitle p{
+    height: 100%;
+}
+.pageTitle p:first-child{
+    background-color: #174DA0;
+    width: 72%;
+    font-size:18px;
+    font-weight: bold;
+    color: #fff;
+    line-height: 48.6px;
+    padding-left: 1.5em
+}
+.pageTitle p:nth-child(2){
+    background-color:#107FC4 ;
+    width: 17%;
+}
+.pageTitle p:last-child{
+    background-color:#80C0DF ;
+    width:8%;
+}
+.directionTitle{
+    margin-top: 104px;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 0 30px;
+}
+.directionText{
+    font-weight: 350;
+    font-size: 14px;
+    padding: 24px 30px;
+    line-height: 24PX;
+    text-indent: 2em;
+}

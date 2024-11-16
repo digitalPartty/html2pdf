@@ -1,0 +1,162 @@
+<!-- 封面 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title></title>
+		<link rel="stylesheet"  th:href="@{/css/public.css}">
+
+
+		<style>
+			html{
+				font-size: 28.54px;
+			}
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+
+			/* 之后分页 */
+			.pageBefore {
+				page-break-before: always;
+			}
+
+			/* 之后分页 */
+			.pageAfter {
+				page-break-after: always;
+			}
+
+			.container {
+				width: 27.82em;
+				height: 35.35em;
+				margin: 0 auto;
+
+			}
+			.coverOne,.coverTwo{
+				width: 27.82em;
+				height: 35.35em;
+			}
+			/* 第一页 */
+			.coverOne {
+				position: relative;
+    			background-size: cover;
+				width: 27.82em;
+				height: 35.35em;
+			}
+			.coverImg{
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: -1;
+				width: 27.82em;
+				height: 35.35em;
+			}
+
+			.headerBox {
+				position: relative;
+				width: 100%;
+			}
+			.headerBox p img{
+				margin-left: 1.54em;
+				width: 2.5em;
+				height: 2.5em;
+				margin-top: 1.68em;
+			}
+
+			.userInfo {
+				position: absolute;
+				right: -1.05em;
+				transform: translateX(-36%);
+				-webkit-transform: translateX(-36%);
+				-moz-transform: translateX(-36%);
+				bottom: 8%;
+			}
+
+			.userInfoItem {
+				margin-bottom: 15px;
+			}
+
+			.userInfo .title {
+				display: inline-block;
+				width: 5.5em;
+				font-size: 0.5em;
+				text-align: right;
+			}
+
+			.userInfo .text {
+				display: inline-block;
+				width: 17.52em;
+				padding-bottom: 0.28em;
+				border-bottom: 0.04em solid #000;
+				text-align: center;
+				font-size: 0.5em;
+				vertical-align: text-bottom;
+			}
+
+			/* 第二页的 */
+			.coverTwo {
+				padding: 0.84em 1.12em;
+			}
+			.directionTitle{
+				margin-top:3.64em;
+				font-size: 0.84em;
+				font-weight:700 ;
+				padding: 0 1em;
+			}
+			.directionText {
+				font-size: 16px;
+				padding: 0.84em 1.5em;
+				line-height: 1.84em;
+				text-indent: 2em;
+			}
+			:root {
+				--base-margin: 12px; /* 你可以根据需要调整这个值 */
+			}
+			.ww{
+				font-size: 5em;
+    			margin-bottom:2em;
+				display: block;
+			}
+
+			.hh{
+				margin-bottom: calc(var(--base-margin) * 8);
+				font-size:calc(var(--base-margin) * 8);
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="coverOne pageAfter">
+				<div class="headerBox">
+					<p>
+						<img th:src="@{/image/logo.png}"/>
+					</p>
+				</div>
+				<img class="coverImg" th:src="@{/image/cover.png}"/>
+				<div class="userInfo">
+					<div class="userInfoItem">
+						<span class="title">姓名：</span>
+						<span class="text" th:text="${user.name}"></span>
+					</div>
+					<div class="userInfoItem">
+						<span class="title">日期：</span>
+						<span class="text" th:text="${user.date}"></span>
+					</div>
+				</div>
+			</div>
+			<div class="coverTwo pageAfter">
+				<h1 class="pageTitle flexBetween">
+					<p>前言</p>
+					<p></p>
+					<p></p>
+				</h1>
+				<p class="directionTitle">感谢您的访问：</p>
+				<p class="directionText">非常感谢您花时间浏览我的个人简介。希望您在这里找到了有价值的信息。如果您有任何问题或合作意向，欢迎随时与我联系。期待与您的进一步交流！</p>
+			</div>
+		</div>
+	</body>
+</html>
